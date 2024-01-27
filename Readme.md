@@ -21,7 +21,10 @@
 2. 运行该项目的时候，务必需要确认`ffmpeg`已经安装，且已经添加到环境变量中去（这样子即可使用`subprocess.call(cmd)`来调用设定的cmd）。
 
       :point_right:[download link of ffmpeg](https://www.ffmpeg.org/) or :point_right: [git仓库](./ffmpeg-6.1-full_build.7z)
-
+## Updates
+1. 在`SubtitleMerge`中添加了`SubtitleMerge_enc.py`文件，并同时更新其可执行文件。
+   
+   该文件旨在解决当字幕编码格式为`GB18030`时，压制视频字幕乱码的问题；解决方案为将字幕文件的编码格式转化为`UTF-8`。
 ## SubtitleExtract
 
 > 从mkv视频中提取内封字幕
