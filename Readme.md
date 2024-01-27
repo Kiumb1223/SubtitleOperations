@@ -18,7 +18,7 @@
 
 1. 该项目的应用场景有限，但是实现的思路极其简单。基本上就是利用`ffmpeg`的指令，然后设定输入文件和输出文件的路径，最后运行即可。
 
-   2. 运行该项目的时候，务必需要确认`ffmpeg`已经安装，且已经添加到环境变量中去（这样子即可使用`subprocess.call(cmd)`来调用设定的cmd）。
+2. 运行该项目的时候，务必需要确认`ffmpeg`已经安装，且已经添加到环境变量中去（这样子即可使用`subprocess.call(cmd)`来调用设定的cmd）。
 
       :point_right:[download link of ffmpeg](https://www.ffmpeg.org/) or :point_right: [git仓库](./ffmpeg-6.1-full_build.7z)
 
