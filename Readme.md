@@ -23,6 +23,7 @@
       :point_right:[download link of ffmpeg](https://www.ffmpeg.org/) or :point_right: [git仓库](./ffmpeg-6.1-full_build.7z)
 ## Updates
 1. 在`SubtitleMerge`中添加了`SubtitleMerge_enc.py`文件，并同时更新其可执行文件。
+   
    该文件旨在解决当字幕编码格式为`GB18030`时，压制视频字幕乱码的问题；解决方案为将字幕文件的编码格式转化为`UTF-8`。
 ## SubtitleExtract
 
