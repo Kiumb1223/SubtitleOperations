@@ -29,15 +29,19 @@ def match_vedio_subtitle(vedio,subtitle):
     @Return      : 匹配成功则返回 修正之后的字符；否则返回None
     '''
     pattern  = r'(S\d+)\.?(E\d+)'  
-    match1   = re.match(pattern,vedio)
-    match2   = re.match(pattern,subtitle)
-    
-    if match1 and match2 and match1.group() == match2.group():
-        return re.sub(pattern,r'\1\2',match.group())   
+    # re.match是字符串的开始处匹配的
+    # re.search会扫描整个字符串
+    match1   = re.search(pattern,vedio)
+    match2   = re.search(pattern,subtitle)
+    # 需要额外处理  一个是S01.E01  另一个是S01E01 的特殊情况
+    str1     =  re.sub(pattern,r'\1\2',match1.group())   
+    str2     =  re.sub(pattern,r'\1\2',match2.group())   
+    if match1 and match2 and str1 == str2:
+        return str1 
     else:
         return None
 
-current_dir = os.getcwd()
+current_dir = '.\\'
 temporary_output_dir = os.path.join(current_dir,'merged')
 
 
@@ -46,9 +50,7 @@ if not os.path.exists(temporary_output_dir):
 
 for vedio in os.listdir(current_dir):
     if vedio.endswith('.mkv'):
-        # 使用正则项进行重命名 以及 匹配字幕和视频
-        pattern = r'S\d+\.?E\d+'  # 该正则表达式可匹配S01E01或S01.E01
-        match   = re.match(pattern,vedio)
+
         for subtitle in os.listdir(current_dir):
             if (subtitle.endswith('.ass') or subtitle.endswith('.srt')):                
                 rename = match_vedio_subtitle(vedio,subtitle)
