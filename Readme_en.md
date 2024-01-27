@@ -22,6 +22,10 @@
 
    :point_right:[download link of ffmpeg](https://www.ffmpeg.org/) or :point_right: [download Link in the git repository ](./ffmpeg-6.1-full_build.7z)
 
+## Updates
+1. Added the `SubtitleMerge_enc.py` file to `SubtitleMerge`, and updated its executable files simulaneously.
+
+   This file aims to address the issue of grabled video subtitles when the subtitle encoding format is `GB18030`;the solution involves converting the subtitle tile encoding format to `UTF-8`
 ## SubtitleExtract
 
 > Extracting Embedded Subtitles from MKV Videos
